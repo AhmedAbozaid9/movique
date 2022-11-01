@@ -1,11 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import styles from "../style/components/navigation.module.css";
-
-function Navigation(props) {
+function Links(props) {
   return (
-    <nav className={styles.nav}>
+    <>
       <NavLink end to={"/"}>
         Home
       </NavLink>
@@ -13,8 +11,8 @@ function Navigation(props) {
       <NavLink to={"tvShows"}>TV shows</NavLink>
       <NavLink to={"myList"}>My list</NavLink>
       <NavLink to={"signIn"}>Sign in</NavLink>
-    </nav>
+    </>
   );
 }
 
-export default Navigation;
+export default Links;
