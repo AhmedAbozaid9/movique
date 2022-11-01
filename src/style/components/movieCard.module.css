@@ -1,0 +1,14 @@
+.movieCard {
+  width: 200px;
+  text-align: center;
+  font-size: 13px;
+  margin: 0.5rem;
+}
+.movieCard img {
+  width: 200px;
+  height: 250px;
+  object-fit: fill;
+}
+.movieCard p {
+  padding: 0 10px;
+}
