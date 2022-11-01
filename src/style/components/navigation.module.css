@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav a:last-child {
+  margin-left: auto;
+}
+.nav a {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+.nav a:hover {
+  color: var(--primary);
+}
+.nav a[class="active"] {
+  color: var(--primary);
+}
