@@ -12,7 +12,7 @@ const useData = (type = "all", page = 1) => {
       });
       setData(res.data);
     })();
-  });
+  }, [type, page]);
   return data;
 };
 
