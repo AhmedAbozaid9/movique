@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-  --primary: #ffca8c;
+    --primary: #FFCA8C;
 }
 
 body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #050505;
-  color: #fff;
+    font-family: "Poppins", sans-serif;
+    background-color: #050505;
+    color: #fff;
 }
