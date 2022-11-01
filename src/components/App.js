@@ -7,7 +7,10 @@ import TvShows from "../pages/TvShows";
 import MyList from "../pages/MyList";
 import SignIn from "../pages/SignIn";
 
+import useData from "../hooks/useData";
+
 function App() {
+  const data = useData("tv");
   return (
     <>
       <Navigation />
