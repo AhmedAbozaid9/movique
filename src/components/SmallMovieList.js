@@ -48,6 +48,7 @@ function SmallMovieList({ data, title, link }) {
         {data &&
           data.map((result) => (
             <MovieCard
+              id={result.id}
               link={link}
               key={result.id}
               title={
