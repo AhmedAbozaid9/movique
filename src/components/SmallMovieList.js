@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import MovieCard from "./MovieCard";
 import styles from "../style/components/smallList.module.css";
 import { Link } from "react-router-dom";
+import Separator from "./Separator";
 
 function SmallMovieList({ data, title, link }) {
   const [windowSize, setWindowSize] = useState(getWindowSize());
@@ -42,6 +43,7 @@ function SmallMovieList({ data, title, link }) {
         <h3>{title}</h3>
         <Link to={link}>See more</Link>
       </div>
+      <Separator />
       <Slider {...settings}>
         {data &&
           data.map((result) => (
