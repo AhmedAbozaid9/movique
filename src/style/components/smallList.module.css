@@ -1,0 +1,18 @@
+.smallList {
+  background-color: var(--secondary);
+  margin: 4rem 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textContainer a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary);
+}

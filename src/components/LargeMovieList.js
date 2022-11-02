@@ -4,16 +4,6 @@ import MovieCard from "./MovieCard";
 import styles from "../style/components/largeMovieList.module.css";
 
 function LargeMovieList({ data }) {
-  const config = {
-    movie: {
-      title: "title",
-      year: "release_date",
-    },
-    tv: {
-      title: "name",
-      year: "first_air_date",
-    },
-  };
   return (
     <div className={styles.largeList}>
       {data &&

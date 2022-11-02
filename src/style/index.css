@@ -2,9 +2,11 @@
 
 :root {
   --primary: #ffca8c;
+  --secondary: #101010;
 }
 
 body {
+  overflow-x: hidden;
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: #050505;
