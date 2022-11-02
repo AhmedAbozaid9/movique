@@ -1,16 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import styles from "../style/components/movieCard.module.css";
 
 const IMG_PATH = "https://image.tmdb.org/t/p/w500/";
 
-function MovieCard({ title, image, year }) {
+function MovieCard({ id, title, image, year, link }) {
   return (
     <div className={styles.movieCard}>
-      <img src={`${IMG_PATH}${image}`} alt={title} />
-      <p>
-        {title} ({year})
-      </p>
+      {id}
+      <Link to={link ? `${link}/${title}` : `${id}`}>
+        <img src={`${IMG_PATH}${image}`} alt={title} />
+        <p>
+          {title} ({year})
+        </p>
+      </Link>
     </div>
   );
 }

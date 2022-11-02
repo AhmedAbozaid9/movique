@@ -5,6 +5,10 @@
   margin: 0.5rem;
   cursor: pointer;
 }
+.movieCard a {
+  color: white;
+  text-decoration: none;
+}
 .movieCard img {
   width: 200px;
   height: 250px;

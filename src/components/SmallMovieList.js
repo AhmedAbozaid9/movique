@@ -48,6 +48,7 @@ function SmallMovieList({ data, title, link }) {
         {data &&
           data.map((result) => (
             <MovieCard
+              link={link}
               key={result.id}
               title={
                 result[result["media_type"] === "movie" ? "title" : "name"]

@@ -9,6 +9,7 @@ function LargeMovieList({ data }) {
       {data &&
         data.map((result) => (
           <MovieCard
+            id={result.id}
             key={result.id}
             title={result[result["media_type"] === "movie" ? "title" : "name"]}
             image={result["poster_path"]}
