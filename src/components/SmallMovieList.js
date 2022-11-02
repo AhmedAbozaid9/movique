@@ -11,6 +11,20 @@ import Separator from "./Separator";
 function SmallMovieList({ data, title, link }) {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
+  const [clientXonMouseDown, setClientXonMouseDown] = useState(null);
+  const [clientYonMouseDown, setClientYonMouseDown] = useState(null);
+
+  const handleOnMouseDown = (e) => {
+    e.preventDefault();
+    setClientXonMouseDown(e.clientX);
+    setClientYonMouseDown(e.clientY);
+  };
+  const handleOnClick = (e) => {
+    e.stopPropagation();
+    if (clientXonMouseDown !== e.clientX || clientYonMouseDown !== e.clientY) {
+      e.preventDefault();
+    }
+  };
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
@@ -48,6 +62,8 @@ function SmallMovieList({ data, title, link }) {
         {data &&
           data.map((result) => (
             <MovieCard
+              onMouseDown={handleOnMouseDown}
+              onClick={handleOnClick}
               id={result.id}
               link={link}
               key={result.id}
