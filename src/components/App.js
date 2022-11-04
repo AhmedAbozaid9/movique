@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "./Navigation";
+import Navigation from "./navigation/Navigation";
 import { Route, Routes } from "react-router";
 
 import Home from "../pages/Home";
@@ -8,11 +8,13 @@ import TvShows from "../pages/TvShows";
 import MyList from "../pages/MyList";
 import SignIn from "../pages/SignIn";
 import Movie from "../pages/Movie";
+import MobileNavigation from "./navigation/MobileNavigation";
 
 function App() {
   return (
     <>
       <Navigation />
+      <MobileNavigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="movies" element={<Movies />}>
