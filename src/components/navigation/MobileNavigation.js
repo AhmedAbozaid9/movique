@@ -32,7 +32,6 @@ function MobileNavigation() {
   return (
     <>
       <MobileMenuArea />
-
       <nav
         className={styles.mobileNav}
         onClick={() => isOpen && setIsOpen(false)}

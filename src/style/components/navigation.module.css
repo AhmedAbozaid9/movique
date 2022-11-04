@@ -26,6 +26,7 @@
 }
 /*styles for mobile hamburger menu*/
 .mobileArea {
+  display: none;
   height: 60px;
   width: 100vw;
   background-color: transparent;
@@ -35,8 +36,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
 }
 
 .mobileNav .navLinks {
@@ -68,5 +67,8 @@
   .nav {
     display: none;
     background-color: green;
+  }
+  .mobileArea {
+    display: block;
   }
 }
