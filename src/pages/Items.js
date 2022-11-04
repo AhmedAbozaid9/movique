@@ -1,11 +1,10 @@
 import React from "react";
-
 import useData from "../hooks/useData";
 import LargeMovieList from "../components/LargeMovieList";
 import { Outlet } from "react-router";
 
-function TvShows(props) {
-  const { results } = useData("tv");
+function Items({ type }) {
+  const { results } = useData(type);
   return (
     <>
       <LargeMovieList data={results} />
@@ -14,4 +13,4 @@ function TvShows(props) {
   );
 }
 
-export default TvShows;
+export default Items;
