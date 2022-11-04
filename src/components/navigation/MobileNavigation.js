@@ -30,14 +30,17 @@ function MobileNavigation() {
   );
 
   return (
-    <nav
-      className={styles.mobileNav}
-      onClick={() => isOpen && setIsOpen(false)}
-    >
+    <>
       <MobileMenuArea />
-      {isOpen ? closeIcon : openIcon}
-      {isOpen && <NavLinks />}
-    </nav>
+
+      <nav
+        className={styles.mobileNav}
+        onClick={() => isOpen && setIsOpen(false)}
+      >
+        {isOpen ? closeIcon : openIcon}
+        {isOpen && <NavLinks />}
+      </nav>
+    </>
   );
 }
 
