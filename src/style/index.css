@@ -6,6 +6,10 @@
   --secondary: #1c1c1c;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   overflow-x: hidden;
   margin: 0;

@@ -3,7 +3,6 @@
   background-image: url("../../assets/horse.jpg");
   width: 100vw;
   height: 350px;
-  overflow-x: hidden;
   background-position: center;
   display: flex;
   justify-content: center;
