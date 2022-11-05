@@ -18,11 +18,10 @@ function SmallList({ data, title, link }) {
       <Splide options={{ autoWidth: true, pagination: false }}>
         {data &&
           data.map((result) => (
-            <SplideSlide>
+            <SplideSlide key={result.id}>
               <MovieCard
                 id={result.id}
                 link={link}
-                key={result.id}
                 title={
                   result[result["media_type"] === "movie" ? "title" : "name"]
                 }

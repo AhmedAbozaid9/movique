@@ -33,7 +33,8 @@
 }
 .mobileNav {
   display: none;
-  position: absolute;
+  position: fixed;
+  z-index: 20;
   top: 0;
   left: 0;
 }
@@ -44,7 +45,8 @@
   display: flex;
   flex-direction: column;
   background-color: var(--secondary);
-  width: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
   padding-top: 3.5rem;
 }
 
