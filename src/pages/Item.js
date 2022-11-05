@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { extractColors } from "extract-colors";
-import useFindItem from "../hooks/useFindItem";
+import { useLocation } from "react-router";
 
 function Item() {
-  const { itemId } = useParams();
-  const item = useFindItem("tv", 95403);
+  const location = useLocation();
   // const [color, setColor] = useState(null);
   // useEffect(() => {
   //   (async () => {
@@ -13,7 +10,7 @@ function Item() {
   //   })();
   // });
 
-  return <div>{itemId}</div>;
+  return <div>{"name is " + location.state}</div>;
 }
 
 export default Item;

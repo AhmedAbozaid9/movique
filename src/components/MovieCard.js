@@ -10,6 +10,7 @@ function MovieCard({ id, title, image, year, link, onClick, onMouseDown }) {
     <div className={styles.movieCard}>
       <Link
         to={link ? `${link}/${id}` : `${id}`}
+        state={title}
         onMouseDown={(e) => onMouseDown(e)}
         onClick={(e) => onClick(e)}
       >

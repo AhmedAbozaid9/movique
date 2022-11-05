@@ -1,10 +1,10 @@
 import React from "react";
 import useData from "../hooks/useData";
 import LargeMovieList from "../components/LargeMovieList";
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 
 function Items({ type }) {
-  const { results } = useData(type);
+  const { results } = useData(type, 1);
   return (
     <>
       <LargeMovieList data={results} />
