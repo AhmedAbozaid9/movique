@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "../components/HeroSection";
-import SmallMovieList from "../components/SmallMovieList";
+import SmallList from "../components/SmallList";
 import useData from "../hooks/useData";
 
 function Home(props) {
@@ -9,12 +9,8 @@ function Home(props) {
   return (
     <>
       <HeroSection />
-      <SmallMovieList
-        data={movies.results}
-        title="Trending Movies"
-        link="/movies"
-      />
-      <SmallMovieList
+      <SmallList data={movies.results} title="Trending Movies" link="/movies" />
+      <SmallList
         data={tvShows.results}
         title="Trending Tv Shows"
         link="tvShows"

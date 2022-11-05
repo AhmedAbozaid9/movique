@@ -3,7 +3,7 @@ import React from "react";
 import MovieCard from "./MovieCard";
 import styles from "../style/components/largeMovieList.module.css";
 
-function LargeMovieList({ data }) {
+function LargeList({ data }) {
   return (
     <div className={styles.largeList}>
       {data &&
@@ -24,4 +24,4 @@ function LargeMovieList({ data }) {
   );
 }
 
-export default LargeMovieList;
+export default LargeList;

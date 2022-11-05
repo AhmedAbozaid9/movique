@@ -1,13 +1,13 @@
 import React from "react";
 import useData from "../hooks/useData";
-import LargeMovieList from "../components/LargeMovieList";
+import LargeList from "../components/LargeList";
 import { Outlet, useLocation } from "react-router";
 
 function Items({ type }) {
   const { results } = useData(type, 1);
   return (
     <>
-      <LargeMovieList data={results} />
+      <LargeList data={results} />
       <Outlet />
     </>
   );
