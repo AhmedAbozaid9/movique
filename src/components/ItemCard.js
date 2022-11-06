@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import styles from "../style/components/movieCard.module.css";
+import styles from "../style/components/itemCard.module.css";
 import extractData from "../utils/extractData";
 
 function ItemCard({ result, link }) {
