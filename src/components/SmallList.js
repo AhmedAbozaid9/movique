@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
 
-import MovieCard from "./MovieCard";
+import ItemCard from "./ItemCard";
 import styles from "../style/components/smallList.module.css";
 import { Link } from "react-router-dom";
 import Separator from "./Separator";
@@ -19,19 +18,7 @@ function SmallList({ data, title, link }) {
         {data &&
           data.map((result) => (
             <SplideSlide key={result.id}>
-              <MovieCard
-                id={result.id}
-                link={link}
-                title={
-                  result[result["media_type"] === "movie" ? "title" : "name"]
-                }
-                image={result["poster_path"]}
-                year={result[
-                  result["media_type"] === "movie"
-                    ? "release_date"
-                    : "first_air_date"
-                ].slice(0, 4)}
-              />
+              <ItemCard result={result} link={link} />
             </SplideSlide>
           ))}
       </Splide>
