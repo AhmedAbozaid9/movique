@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--secondary);
-  max-width: 900px;
+  width: 700px;
   margin: 1rem;
   padding: 1rem;
   border-radius: 20px;
@@ -31,5 +31,6 @@
 @media (max-width: 700px) {
   .reviewCard {
     font-size: 0.9rem;
+    width: calc(100% - 3rem);
   }
 }
