@@ -1,0 +1,10 @@
+.tag {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 35px;
+  width: fit-content;
+  padding: 0.2rem 1rem;
+  margin: 0.2rem;
+}

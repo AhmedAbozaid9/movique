@@ -10,8 +10,10 @@ const useProminentColor = (image) => {
 
   useEffect(() => {
     (async () => {
-      const values = await prominent(corsImageModified, { amount: 1 });
-      const RGB = `rgb(${values[0]},${values[1]},${values[2]})`;
+      const values = await prominent(corsImageModified, {
+        amount: 1,
+      });
+      const RGB = `rgb(${values[0]},${values[1]},${values[2]},0.6)`;
       setColor(RGB);
     })();
   }, []);

@@ -1,7 +1,7 @@
 import React from "react";
 import useData from "../hooks/useData";
 import LargeList from "../components/LargeList";
-import { Outlet, useLocation } from "react-router";
+import { Outlet } from "react-router";
 
 function Items({ type }) {
   const { results } = useData(type, 1);
