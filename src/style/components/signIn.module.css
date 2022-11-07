@@ -1,0 +1,48 @@
+.signInPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.signInForm {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--secondary);
+  width: fit-content;
+  padding: 4rem 2rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+.signInForm h3 {
+  color: var(--primary);
+  margin: 0;
+}
+.signInForm p {
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+.signInButton {
+  background-color: var(--primary);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  width: 250px;
+
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signInButton span {
+  margin-right: 5px;
+}
+.signInButton .signInButton:focus {
+  outline: none;
+}

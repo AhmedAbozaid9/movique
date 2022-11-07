@@ -1,7 +1,14 @@
 import React from "react";
 
-function SignIn(props) {
-  return <div>Sign in</div>;
+import SignInForm from "../components/SignIn/SignInForm";
+import styles from "../style/components/signIn.module.css";
+
+function SignIn() {
+  return (
+    <div className={styles.signInPage}>
+      <SignInForm />
+    </div>
+  );
 }
 
 export default SignIn;
