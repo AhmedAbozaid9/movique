@@ -11,7 +11,7 @@ function Item() {
   const { title, image, year } = extractData(itemData);
   const genres = extractGenre(itemData["genre_ids"], type);
 
-  console.log(useReviews(type, itemData.id));
+  const reviews = useReviews(type, itemData.id);
 
   return (
     <ItemHeader

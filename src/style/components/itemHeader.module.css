@@ -47,14 +47,6 @@
   font-weight: bold;
   margin: 1rem 0;
 }
-.rating {
-  display: flex;
-  align-items: center;
-  margin-right: 30px;
-}
-.star {
-  margin-right: 10px;
-}
 
 @media (max-width: 700px) {
   .itemHeader {

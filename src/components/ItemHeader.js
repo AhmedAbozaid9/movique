@@ -1,8 +1,8 @@
 import React from "react";
-import { AiFillStar } from "react-icons/ai";
 import useProminentColor from "../hooks/useProminentColor";
 import styles from "../style/components/itemHeader.module.css";
 import Tag from "./Tag";
+import Rating from "./Rating";
 
 function ItemHeader({ title, image, overview, genres, year, rating }) {
   const color = useProminentColor(image) || "rgba(23,23,23,0.6)";
@@ -17,10 +17,7 @@ function ItemHeader({ title, image, overview, genres, year, rating }) {
           ))}
         </div>
         <div className={styles.details}>
-          <div className={styles.rating}>
-            <AiFillStar className={styles.star} size="25px" color="#F0CC0D" />
-            <span>{rating}</span>
-          </div>
+          <Rating rating={rating} />
           <div className="year">
             <span>{year}</span>
           </div>
