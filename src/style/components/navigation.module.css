@@ -7,6 +7,7 @@
   color: inherit;
   cursor: pointer;
 }
+
 .nav a:hover,
 .mobileNav a:hover {
   color: var(--primary);
@@ -16,7 +17,14 @@
   color: var(--primary);
 }
 /*styles for desktop nav bar*/
-
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
 .nav a:last-child {
   margin-left: auto;
 }
@@ -26,7 +34,6 @@
 }
 /*styles for mobile hamburger menu*/
 .mobileArea {
-  display: none;
   height: 60px;
   width: 100vw;
   background-color: transparent;
@@ -34,9 +41,12 @@
 .mobileNav {
   display: none;
   position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 20;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 60px;
 }
 
 .mobileNav .navLinks {
@@ -68,9 +78,5 @@
   }
   .nav {
     display: none;
-    background-color: green;
-  }
-  .mobileArea {
-    display: block;
   }
 }
