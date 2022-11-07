@@ -2,19 +2,17 @@ import { useState, useEffect } from "react";
 
 import imdb from "../components/api/imdb";
 
-const useData = (type = "all", page = 1) => {
+const useReviews = (type, id) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const res = await imdb.get(`trending/${type}/week`, {
-        params: { page: page },
-      });
+      const res = await imdb.get(`${type}/${id}/reviews`);
       setData(res.data);
     })();
-  }, [page, type]);
+  }, [id, type]);
 
-  return data;
+  return data.results;
 };
 
-export default useData;
+export default useReviews;
