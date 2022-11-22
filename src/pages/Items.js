@@ -1,13 +1,14 @@
 import React from "react";
-import useData from "../hooks/useData";
 import LargeList from "../components/LargeList";
 import { Outlet } from "react-router";
+import getData from "../components/api/getData";
+import { useQuery } from "react-query";
 
 function Items({ type }) {
-  const { results } = useData(type, 1);
+  const { data, isLoading } = useQuery([`${type}`], () => getData(type));
   return (
     <>
-      <LargeList data={results} />
+      <LargeList data={isLoading ? [] : data.data.results} />
       <Outlet />
     </>
   );

@@ -1,17 +1,26 @@
 import React from "react";
 import HeroSection from "../components/HeroSection";
 import SmallList from "../components/SmallList";
-import useData from "../hooks/useData";
+import { useQuery } from "react-query";
+import getData from "../components/api/getData";
 
 function Home(props) {
-  const movies = useData("movie");
-  const tvShows = useData("tv");
+  const { data: movies, isLoading: isLoadingMovies } = useQuery([`movie`], () =>
+    getData("movie")
+  );
+  const { data: tvShows, isLoading: isLoadingTv } = useQuery([`tv`], () =>
+    getData("tv")
+  );
   return (
     <>
       <HeroSection />
-      <SmallList data={movies.results} title="Trending Movies" link="/movies" />
       <SmallList
-        data={tvShows.results}
+        data={isLoadingMovies ? [] : movies.data.results}
+        title="Trending Movies"
+        link="/movies"
+      />
+      <SmallList
+        data={isLoadingTv ? [] : tvShows.data.results}
         title="Trending Tv Shows"
         link="tvShows"
       />

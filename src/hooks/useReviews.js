@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import imdb from "../components/api/imdb";
+import imdb from "../components/api/tmdb";
 
 const useReviews = (type, id) => {
   const [data, setData] = useState([]);
