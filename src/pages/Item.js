@@ -13,7 +13,6 @@ function Item() {
   const genres = extractGenre(itemData["genre_ids"], type);
 
   const reviews = useReviews(type, itemData.id);
-  console.log(itemData);
 
   return (
     <>

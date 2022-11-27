@@ -10,7 +10,6 @@ function Items({ type }) {
     ({ pageParam = 1 }) => getData(type, pageParam),
     {
       getNextPageParam: (lastPage) => {
-        console.log(lastPage.data.page);
         return lastPage.data.page < lastPage.data["total_pages"]
           ? lastPage.data.page + 1
           : undefined;

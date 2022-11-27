@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BiMenuAltLeft } from "react-icons/bi";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { MdClose } from "react-icons/md";
 
 import NavLinks from "./NavLinks";
 import styles from "../../style/components/navigation.module.css";
@@ -20,7 +20,7 @@ function MobileNavigation() {
   );
 
   const closeIcon = (
-    <AiOutlineCloseCircle
+    <MdClose
       size="40px"
       className={styles.navIcon}
       onClick={() => {
@@ -37,7 +37,11 @@ function MobileNavigation() {
         onClick={() => isOpen && setIsOpen(false)}
       >
         {isOpen ? closeIcon : openIcon}
-        {isOpen && <NavLinks />}
+        {isOpen && (
+          <div className={styles.overlay}>
+            <NavLinks />
+          </div>
+        )}
       </nav>
     </>
   );
