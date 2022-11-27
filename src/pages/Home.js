@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection";
 import SmallList from "../components/SmallList";
 import { useQuery } from "react-query";
 import getData from "../components/api/getData";
+import LoadingListSkeleton from "../components/LoadingListSkeleton";
 
 function Home(props) {
   const { data: movies, isLoading: isLoadingMovies } = useQuery([`movie`], () =>
@@ -15,12 +16,12 @@ function Home(props) {
     <>
       <HeroSection />
       <SmallList
-        data={isLoadingMovies ? [] : movies.data.results}
+        data={isLoadingMovies ? undefined : movies.data.results}
         title="Trending Movies"
         link="/movies"
       />
       <SmallList
-        data={isLoadingTv ? [] : tvShows.data.results}
+        data={isLoadingTv ? undefined : tvShows.data.results}
         title="Trending Tv Shows"
         link="tvShows"
       />
