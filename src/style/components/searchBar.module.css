@@ -1,0 +1,30 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 1rem 2rem;
+}
+.searchBar input {
+  padding: 1rem;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 20px;
+}
+.searchBar input[type="text"] {
+  width: 100vw;
+}
+
+.searchBar input[type="submit"] {
+  font-weight: bolder;
+  cursor: pointer;
+}
+.searchBar input[type="submit"]:hover {
+  background-color: #ffffff;
+  color: #050505;
+}
+@media (max-width: 700px) {
+  .searchBar input {
+    font-size: 16px;
+  }
+}

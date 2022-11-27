@@ -3,9 +3,8 @@ import HeroSection from "../components/HeroSection";
 import SmallList from "../components/SmallList";
 import { useQuery } from "react-query";
 import getData from "../components/api/getData";
-import LoadingListSkeleton from "../components/LoadingListSkeleton";
 
-function Home(props) {
+function Home() {
   const { data: movies, isLoading: isLoadingMovies } = useQuery([`movie`], () =>
     getData("movie")
   );

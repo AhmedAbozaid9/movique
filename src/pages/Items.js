@@ -3,6 +3,7 @@ import LargeList from "../components/LargeList";
 import { Outlet } from "react-router";
 import getData from "../components/api/getData";
 import { useInfiniteQuery } from "react-query";
+import Search from "../components/Search";
 
 function Items({ type }) {
   const { data, hasNextPage, fetchNextPage } = useInfiniteQuery(
@@ -38,6 +39,7 @@ function Items({ type }) {
 
   return (
     <>
+      <Search placeholder={"Search for anything"} />
       <LargeList data={data} />
       <Outlet />
     </>
