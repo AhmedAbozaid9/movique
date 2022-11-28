@@ -39,7 +39,7 @@ function MobileNavigation() {
         {isOpen ? closeIcon : openIcon}
         {isOpen && (
           <div className={styles.overlay}>
-            <NavLinks />
+            <NavLinks isOpen={isOpen} />
           </div>
         )}
       </nav>

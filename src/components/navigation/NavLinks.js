@@ -1,10 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import { NavLink } from "react-router-dom";
 import styles from "../../style/components/navigation.module.css";
 
 function NavLinks() {
   return (
-    <div className={styles.navLinks}>
+    <motion.div
+      className={styles.navLinks}
+      initial={{ height: 0 }}
+      animate={{ height: "500%" }}
+    >
       <NavLink end to={"/"}>
         Home
       </NavLink>
@@ -12,7 +18,7 @@ function NavLinks() {
       <NavLink to={"tvShows"}>TV shows</NavLink>
       <NavLink to={"myList"}>My list</NavLink>
       <NavLink to={"signIn"}>Sign in</NavLink>
-    </div>
+    </motion.div>
   );
 }
 
