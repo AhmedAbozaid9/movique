@@ -5,7 +5,7 @@ import styles from "../style/components/itemCard.module.css";
 import extractData from "../utils/extractData";
 import ImagePlaceholder from "./ImagePlaceholder";
 
-function ItemCard({ result, link }) {
+function ItemCard({ result, link, type }) {
   const { title, image, year } = extractData(result);
   const imageComponent =
     image.slice(-4) !== "null" ? (
@@ -17,7 +17,7 @@ function ItemCard({ result, link }) {
 
   return (
     <div className={styles.movieCard}>
-      <Link to={url} state={result}>
+      <Link to={url} state={{ itemData: result, itemType: type }}>
         {imageComponent}
         <p>
           {title} ({year})

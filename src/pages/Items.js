@@ -49,7 +49,7 @@ function Items({ type }) {
         placeholder={"Search for anything"}
         setSearchQuery={setSearchQuery}
       />
-      <LargeList data={data} />
+      <LargeList data={data} type={type} />
       <Outlet />
     </>
   );

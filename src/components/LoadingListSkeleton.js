@@ -9,7 +9,7 @@ const LoadingListSkeleton = ({ count = 1, width, height }) => {
     let result = [];
     for (let i = 0; i < number; i++) {
       result.push(
-        <div style={{ margin: "0 10px" }}>
+        <div key={i} style={{ margin: "0 10px" }}>
           <Skeleton width={width} height={height} />
         </div>
       );

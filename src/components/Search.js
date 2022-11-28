@@ -8,7 +8,6 @@ const Search = ({ placeholder, setSearchQuery }) => {
   const handleChange = (e) => {
     const newValue = e.target.value;
     setValue(newValue);
-    console.log(value);
   };
 
   const handleSubmit = (e) => {

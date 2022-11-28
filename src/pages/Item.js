@@ -7,8 +7,9 @@ import ItemHeader from "../components/ItemHeader";
 import Reviews from "../components/Reviews";
 
 function Item() {
-  const { state: itemData } = useLocation();
-  const type = itemData["media_type"];
+  const { state } = useLocation();
+  const { itemData, itemType } = state;
+  const type = itemData["media_type"] || itemType;
   const { title, image, year } = extractData(itemData);
   const genres = extractGenre(itemData["genre_ids"], type);
 
