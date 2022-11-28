@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import styles from "../style/components/searchBar.module.css";
 
-const Search = ({ placeholder }) => {
+const Search = ({ placeholder, setSearchQuery }) => {
   const [value, setValue] = useState("");
 
   const handleChange = (e) => {
@@ -13,6 +13,7 @@ const Search = ({ placeholder }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSearchQuery(value);
   };
 
   return (

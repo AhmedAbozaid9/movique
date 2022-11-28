@@ -3,11 +3,13 @@
 export const IMG_PATH = "https://image.tmdb.org/t/p/w500/";
 
 const extractData = (result) => {
-  const title = result[result["media_type"] === "movie" ? "title" : "name"];
+  console.log(result);
+  const title =
+    result[result["media_type"] === "movie" ? "title" : "name"] || result.title;
   const image = `${IMG_PATH}/${result["poster_path"]}`;
   const year = result[
     result["media_type"] === "movie" ? "release_date" : "first_air_date"
-  ].slice(0, 4);
+  ]?.slice(0, 4);
 
   return { title, image, year };
 };

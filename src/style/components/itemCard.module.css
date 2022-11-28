@@ -21,11 +21,21 @@
   text-overflow: ellipsis;
 }
 
+.placeholder {
+  width: 200px;
+  height: 250px;
+  background-color: #4f4f4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 700px) {
   .movieCard {
     width: 150px;
   }
-  .movieCard img {
+  .movieCard img,
+  .placeholder {
     width: 150px;
     height: 200px;
   }

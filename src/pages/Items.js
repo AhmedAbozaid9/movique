@@ -1,14 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import LargeList from "../components/LargeList";
 import { Outlet } from "react-router";
 import getData from "../components/api/getData";
+import searchData from "../components/api/searchData";
 import { useInfiniteQuery } from "react-query";
 import Search from "../components/Search";
 
 function Items({ type }) {
+  const [searchQuery, setSearchQuery] = useState("");
+
   const { data, hasNextPage, fetchNextPage } = useInfiniteQuery(
-    `${type} page`,
-    ({ pageParam = 1 }) => getData(type, pageParam),
+    `${type} ${searchQuery} page`,
+    ({ pageParam = 1 }) =>
+      searchQuery
+        ? searchData(type, pageParam, searchQuery)
+        : getData(type, pageParam),
     {
       getNextPageParam: (lastPage) => {
         return lastPage.data.page < lastPage.data["total_pages"]
@@ -39,7 +45,10 @@ function Items({ type }) {
 
   return (
     <>
-      <Search placeholder={"Search for anything"} />
+      <Search
+        placeholder={"Search for anything"}
+        setSearchQuery={setSearchQuery}
+      />
       <LargeList data={data} />
       <Outlet />
     </>
