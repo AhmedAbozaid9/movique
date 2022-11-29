@@ -6,7 +6,7 @@ import extractData from "../utils/extractData";
 import ImagePlaceholder from "./ImagePlaceholder";
 
 function ItemCard({ result, link, type }) {
-  const { title, image, year } = extractData(result);
+  const { title, image, year } = extractData(result, type);
   const imageComponent =
     image.slice(-4) !== "null" ? (
       <img src={`${image}`} alt={title} />

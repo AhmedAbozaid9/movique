@@ -1,13 +1,15 @@
 .reviews {
   flex-direction: column;
-  margin: 1rem 0;
+  margin: 2rem auto;
   display: flex;
-  align-items: center;
   justify-content: center;
+  background-color: rgba(148, 148, 148, 0.22);
+  width: fit-content;
+  border-radius: 20px;
 }
 
 .header {
-  margin: 1rem;
+  margin: 2rem 1rem 1rem;
 }
 .reviewCard {
   display: flex;
@@ -27,10 +29,15 @@
   justify-content: space-between;
   width: 100%;
 }
+.reviews p {
+  margin: 1rem;
+  width: 700px;
+}
 
 @media (max-width: 700px) {
-  .reviewCard {
+  .reviewCard,
+  .reviews p {
     font-size: 0.9rem;
-    width: calc(100% - 3rem);
+    width: calc(100vw - 5rem);
   }
 }

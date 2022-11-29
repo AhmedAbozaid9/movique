@@ -2,14 +2,15 @@
 
 export const IMG_PATH = "https://image.tmdb.org/t/p/w500/";
 
-const extractData = (result) => {
-  const type = result["media_type"];
+const extractData = (result, itemType) => {
+  const type = result["media_type"] || itemType;
 
   const title = result[type === "movie" ? "title" : "name"] || result.title;
   const image = `${IMG_PATH}/${result["poster_path"]}`;
+
   const year = result[
-    type === "movie" || type === undefined ? "release_date" : "first_air_date"
-  ].slice(0, 4);
+    type === "movie" ? "release_date" : "first_air_date"
+  ]?.slice(0, 4);
   return { title, image, year };
 };
 
