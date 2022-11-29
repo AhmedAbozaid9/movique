@@ -10,8 +10,9 @@ function Item() {
   const { state } = useLocation();
   const { itemData, itemType } = state;
   const type = itemData["media_type"] || itemType;
+  console.log(type);
   const { title, image, year } = extractData(itemData, type);
-  const genres = extractGenre(itemData["genre_ids"]);
+  const genres = extractGenre(itemData["genre_ids"], type);
 
   const reviews = useReviews(type, itemData.id);
 
