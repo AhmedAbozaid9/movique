@@ -14,7 +14,6 @@ function NavLinks() {
       console.log(err);
     }
   };
-  console.log(user);
   return (
     <motion.div
       className={styles.navLinks}
@@ -27,7 +26,10 @@ function NavLinks() {
       <NavLink to={"movies"}>Movies</NavLink>
       <NavLink to={"tvShows"}>TV shows</NavLink>
       <NavLink to={"myList"}>My list</NavLink>
-      <span className={styles.signIn} onClick={!user && handleGoogleSignIn}>
+      <span
+        className={styles.signIn}
+        onClick={!user ? handleGoogleSignIn : undefined}
+      >
         {user ? user.displayName : "Sign In"}
       </span>
     </motion.div>
