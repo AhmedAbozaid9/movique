@@ -4,7 +4,17 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import styles from "../../style/components/navigation.module.css";
 
+import { UserAuth } from "../../context/authContext";
 function NavLinks() {
+  const { googleSignIn, user } = UserAuth();
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  console.log(user);
   return (
     <motion.div
       className={styles.navLinks}
@@ -17,7 +27,9 @@ function NavLinks() {
       <NavLink to={"movies"}>Movies</NavLink>
       <NavLink to={"tvShows"}>TV shows</NavLink>
       <NavLink to={"myList"}>My list</NavLink>
-      <NavLink to={"signIn"}>Sign in</NavLink>
+      <span className={styles.signIn} onClick={!user && handleGoogleSignIn}>
+        {user ? user.displayName : "Sign In"}
+      </span>
     </motion.div>
   );
 }

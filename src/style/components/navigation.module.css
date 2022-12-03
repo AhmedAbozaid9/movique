@@ -1,6 +1,7 @@
 /*general styles for all links*/
 .nav a,
-.mobileNav a {
+.mobileNav a,
+.signIn {
   font-weight: bold;
   padding: 1rem;
   text-decoration: none;
@@ -9,7 +10,8 @@
 }
 
 .nav a:hover,
-.mobileNav a:hover {
+.mobileNav a:hover,
+.signIn {
   color: var(--primary);
 }
 .nav a[class="active"],
@@ -25,7 +27,7 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
-.nav a:last-child {
+.nav .signIn {
   margin-left: auto;
 }
 .nav .navLinks {
