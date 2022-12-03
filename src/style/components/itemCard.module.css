@@ -58,4 +58,16 @@
     width: 150px;
     height: 200px;
   }
+  .add {
+    width: 30px;
+    height: 30px;
+  }
+  .add:hover {
+    background-color: rgba(255, 255, 255, 0.17);
+    border: 2px solid #ffffff;
+  }
+  .add:active {
+    color: #050505;
+    background-color: #ffffff;
+  }
 }
