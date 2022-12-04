@@ -13,7 +13,7 @@ function LargeList({ data, type, isFetching }) {
         ))
       )}
       {isFetching && (
-        <LoadingListSkeleton width={170} height={230} count={20} />
+        <LoadingListSkeleton width={160} height={230} count={20} />
       )}
     </div>
   );
