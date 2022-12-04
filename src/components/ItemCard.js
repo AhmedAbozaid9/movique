@@ -27,7 +27,7 @@ function ItemCard({ result, link, type, actionType }) {
   const handleAdd = () => {
     setShowToast(true);
     setTimeout(() => {
-      const q = query(collectionRef, where("id", "==", result.id));
+      const q = query(collectionRef, where("data.id", "==", result.id));
       getDocs(q).then((data) => {
         if (!data.docs.length) {
           addDoc(collectionRef, {
