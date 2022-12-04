@@ -24,7 +24,9 @@ const Search = ({ placeholder, setSearchQuery }) => {
         value={value}
         onChange={handleChange}
       />
-      <input type="submit" value="Search" />
+      <button className={styles.submit} type="submit">
+        Search
+      </button>
     </form>
   );
 };

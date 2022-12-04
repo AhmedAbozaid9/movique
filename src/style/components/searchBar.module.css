@@ -4,7 +4,8 @@
   justify-content: center;
   margin: 1rem 1rem 2rem;
 }
-.searchBar input {
+.searchBar input,
+.searchBar .submit {
   padding: 1rem;
   border: 2px solid #ffffff;
   background-color: transparent;
@@ -15,7 +16,7 @@
   width: 700px;
 }
 
-.searchBar input[type="submit"] {
+.searchBar .submit {
   font-weight: bolder;
   cursor: pointer;
 }
