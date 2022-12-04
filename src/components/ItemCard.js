@@ -39,12 +39,12 @@ function ItemCard({ result, link, type, actionType, id, refetch }) {
         if (!data.docs.length) {
           addDoc(collectionRef, {
             owner: user.uid,
-            type: type || "",
+            type: type || result["media_type"],
             data: result,
           }).then();
         }
       });
-    }, 500);
+    }, 600);
   };
 
   const handleDelete = () => {
