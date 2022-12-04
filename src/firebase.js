@@ -1,12 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  query,
-  where,
-} from "firebase/firestore";
+import { getFirestore, collection } from "firebase/firestore";
 
 const firebase = {
   apiKey: "AIzaSyD8iRpDi5FbVRegZTYfy4f9IwaxXz9p8M8",
@@ -22,6 +16,4 @@ const app = initializeApp(firebase);
 export const auth = getAuth(app);
 
 export const db = getFirestore(app);
-const collectionRef = collection(db, "userList");
-const q = query(collectionRef, where("owner", "==", "jane"));
-getDocs(q).then((data) => console.log(data.docs));
+export const collectionRef = collection(db, "userList");

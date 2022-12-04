@@ -21,7 +21,6 @@ const Search = ({ placeholder, setSearchQuery }) => {
         className="search"
         type="text"
         placeholder={placeholder}
-        autoFocus
         value={value}
         onChange={handleChange}
       />

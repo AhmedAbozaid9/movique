@@ -21,8 +21,18 @@
   border-radius: 5px;
 }
 .add:hover {
-  color: #050505;
+  color: var(--primary);
   background-color: #ffffff;
+}
+.cardToast {
+  position: absolute;
+  padding: 10px;
+  border-radius: 20px;
+  bottom: 60px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.84);
+  color: #000000;
 }
 .movieCard a {
   color: white;
@@ -59,15 +69,15 @@
     height: 200px;
   }
   .add {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
   .add:hover {
     background-color: rgba(255, 255, 255, 0.17);
-    border: 2px solid #ffffff;
+    color: #ffffff;
   }
   .add:active {
-    color: #050505;
+    color: var(--primary);
     background-color: #ffffff;
   }
 }
