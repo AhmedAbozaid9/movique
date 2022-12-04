@@ -90,6 +90,7 @@ function MyList() {
                   type={item?.type}
                   id={item.id}
                   actionType="delete"
+                  link={item.type === "movie" ? "/movies" : "/tvShows"}
                 />
               </React.Fragment>
             ))}
