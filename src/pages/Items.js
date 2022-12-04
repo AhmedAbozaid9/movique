@@ -5,11 +5,12 @@ import getData from "../components/api/getData";
 import searchData from "../components/api/searchData";
 import { useInfiniteQuery } from "react-query";
 import Search from "../components/Search";
+import LoadingListSkeleton from "../components/LoadingListSkeleton";
 
 function Items({ type }) {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const { data, hasNextPage, fetchNextPage } = useInfiniteQuery(
+  const { data, isFetching, hasNextPage, fetchNextPage } = useInfiniteQuery(
     `${type} ${searchQuery} page`,
     ({ pageParam = 1 }) =>
       searchQuery
@@ -49,7 +50,7 @@ function Items({ type }) {
         placeholder={"Search for anything"}
         setSearchQuery={setSearchQuery}
       />
-      <LargeList data={data} type={type} />
+      <LargeList data={data} type={type} isFetching={isFetching} />
       <Outlet />
     </>
   );
