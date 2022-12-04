@@ -4,18 +4,25 @@ import { collectionRef } from "../firebase";
 import { getDocs } from "firebase/firestore";
 import { useQuery } from "react-query";
 import ItemCard from "../components/ItemCard";
+import styles from "../style/components/largeList.module.css";
 
 function MyList() {
   const { data } = useQuery(["userData"], () => getDocs(collectionRef), {
-    select: (data) => data.docs.map((doc) => doc.data()),
+    select: (data) => data.docs.map((doc) => ({ ...doc.data(), id: doc.id })),
   });
-  console.log(data && data[0]?.data);
   return (
-    <>
+    <div className={styles.largeList}>
       {data?.map((item) => (
-        <ItemCard result={item?.data} type={item?.type} />
+        <React.Fragment key={item.id}>
+          <ItemCard
+            result={item?.data}
+            type={item?.type}
+            id={item.id}
+            actionType="delete"
+          />
+        </React.Fragment>
       ))}
-    </>
+    </div>
   );
 }
 

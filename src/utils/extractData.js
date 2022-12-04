@@ -4,7 +4,6 @@ export const IMG_PATH = "https://image.tmdb.org/t/p/w500/";
 
 const extractData = (result, itemType) => {
   const type = result["media_type"] || itemType;
-
   const title = result[type === "movie" ? "title" : "name"] || result.title;
   const image = `${IMG_PATH}/${result["poster_path"]}`;
 
