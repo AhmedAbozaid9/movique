@@ -7,8 +7,11 @@ import { useQuery } from "react-query";
 import ItemCard from "../components/ItemCard";
 import styles from "../style/components/largeList.module.css";
 import Separator from "../components/Separator";
+import { UserAuth } from "../context/authContext";
 
 function MyList() {
+  const { user } = UserAuth();
+  console.log(user);
   const [filterBy, setFilterBy] = useState("");
   const options = [
     { value: "", label: "All" },
@@ -22,7 +25,6 @@ function MyList() {
       select: (data) => data.docs.map((doc) => ({ ...doc.data(), id: doc.id })),
     }
   );
-  console.log(data);
   const colourStyles = {
     control: (styles) => ({
       ...styles,
@@ -65,35 +67,42 @@ function MyList() {
       };
     },
   };
-
-  return (
-    <>
-      <Select
-        options={options}
-        value={filterBy}
-        styles={colourStyles}
-        onChange={(option) => {
-          setFilterBy(option.value);
-        }}
-      />
-      <Separator />
-      <div className={styles.largeList}>
-        {data
-          ?.filter((item) => item.type === filterBy || filterBy === "")
-          .map((item) => (
-            <React.Fragment key={item.id}>
-              <ItemCard
-                refetch={refetch}
-                result={item?.data}
-                type={item?.type}
-                id={item.id}
-                actionType="delete"
-              />
-            </React.Fragment>
-          ))}
-      </div>
-    </>
-  );
+  if (user) {
+    return (
+      <>
+        <Select
+          options={options}
+          value={filterBy}
+          styles={colourStyles}
+          onChange={(option) => {
+            setFilterBy(option.value);
+          }}
+        />
+        <Separator />
+        <div className={styles.largeList}>
+          {data
+            ?.filter((item) => item.type === filterBy || filterBy === "")
+            .map((item) => (
+              <React.Fragment key={item.id}>
+                <ItemCard
+                  refetch={refetch}
+                  result={item?.data}
+                  type={item?.type}
+                  id={item.id}
+                  actionType="delete"
+                />
+              </React.Fragment>
+            ))}
+        </div>
+      </>
+    );
+  } else {
+    return (
+      <h3 className={styles.notSignedIn}>
+        Sign in to be able to save your favourite movies and tv shows.
+      </h3>
+    );
+  }
 }
 
 export default MyList;
