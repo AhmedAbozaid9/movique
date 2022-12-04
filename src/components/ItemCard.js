@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsPlusLg } from "react-icons/bs";
 import { IoMdRemove } from "react-icons/io";
-import { addDoc, getDocs, query, where } from "firebase/firestore";
+import {
+  addDoc,
+  getDocs,
+  query,
+  where,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
 
 import styles from "../style/components/itemCard.module.css";
 import extractData from "../utils/extractData";
 import ImagePlaceholder from "./ImagePlaceholder";
 import { UserAuth } from "../context/authContext";
-import { collectionRef } from "../firebase";
+import { collectionRef, db } from "../firebase";
 import CardToast from "./CardToast";
 
-function ItemCard({ result, link, type, actionType }) {
+function ItemCard({ result, link, type, actionType, id, refetch }) {
   const { user } = UserAuth();
   const [showToast, setShowToast] = useState(false);
 
@@ -39,6 +46,12 @@ function ItemCard({ result, link, type, actionType }) {
       });
     }, 500);
   };
+
+  const handleDelete = () => {
+    const docRef = doc(db, "userList", id.toString());
+    deleteDoc(docRef);
+    refetch();
+  };
   return (
     <div className={styles.movieCard}>
       <Link to={url} state={{ itemData: result, itemType: type }}>
@@ -48,7 +61,7 @@ function ItemCard({ result, link, type, actionType }) {
         </p>
       </Link>
       {actionType === "delete" ? (
-        <button className={styles.delete} onClick={handleAdd}>
+        <button className={styles.delete} onClick={handleDelete}>
           <IoMdRemove size={20} />
         </button>
       ) : (

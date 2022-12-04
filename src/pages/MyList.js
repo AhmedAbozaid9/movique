@@ -7,14 +7,19 @@ import ItemCard from "../components/ItemCard";
 import styles from "../style/components/largeList.module.css";
 
 function MyList() {
-  const { data } = useQuery(["userData"], () => getDocs(collectionRef), {
-    select: (data) => data.docs.map((doc) => ({ ...doc.data(), id: doc.id })),
-  });
+  const { data, refetch } = useQuery(
+    ["userData"],
+    () => getDocs(collectionRef),
+    {
+      select: (data) => data.docs.map((doc) => ({ ...doc.data(), id: doc.id })),
+    }
+  );
   return (
     <div className={styles.largeList}>
       {data?.map((item) => (
         <React.Fragment key={item.id}>
           <ItemCard
+            refetch={refetch}
             result={item?.data}
             type={item?.type}
             id={item.id}
