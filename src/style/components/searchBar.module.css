@@ -13,20 +13,20 @@
   font-size: 20px;
   border-radius: 0;
 }
-.searchBar input[type="text"] {
-  width: 700px;
+.searchBar input {
+  max-width: 700px;
 }
 
 .searchBar .submit {
   font-weight: bolder;
   cursor: pointer;
 }
-.searchBar input[type="submit"]:hover {
-  background-color: #ffffff;
-  color: #050505;
-}
+
 @media (max-width: 700px) {
   .searchBar {
     font-size: 16px;
+  }
+  .searchBar input {
+    width: 200px;
   }
 }
